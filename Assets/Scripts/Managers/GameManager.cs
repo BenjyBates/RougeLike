@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Activity { Home, Quest, Battle}
+public enum Activity { Home, Quest, Battle, Test}
 
 public class GameManager : MonoBehaviour
 {
@@ -51,6 +51,10 @@ public class GameManager : MonoBehaviour
             case Activity.Battle:
                 Cam.transform.position = CameraSeats[2].transform.position; Cam.transform.rotation = CameraSeats[1].transform.rotation;
                 MouseLook.fpsCamOn = false;
+                break;
+
+            case Activity.Test:
+                MouseLook.fpsCamOn = true;
                 break;
 
         }

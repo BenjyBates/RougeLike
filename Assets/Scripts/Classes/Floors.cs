@@ -5,7 +5,8 @@ using UnityEngine;
 public class Floors : MonoBehaviour
 {
     public GameObject master;
-    public bool interactable;
+    public bool completed;
+    public bool next;
     private Renderer cubeRend;
 
     private void Awake()
@@ -16,11 +17,15 @@ public class Floors : MonoBehaviour
     private void Update()
     {
 
-        if(interactable)
+        if(next)
+        {
+            cubeRend.material.SetColor("_Color", Color.yellow);
+        }
+        else if(completed)
         {
             cubeRend.material.SetColor("_Color", Color.green);
         }
-        else if(!interactable)
+        else
         {
             cubeRend.material.SetColor("_Color", Color.red);
         }
